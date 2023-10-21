@@ -1,0 +1,74 @@
+package com.infotech;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
+import org.slf4j.Logger;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.infotech.entities.User;
+import com.infotech.repository.UserRepository;
+
+@SpringBootApplication
+
+public class SpringBootDataJpa02Application {
+
+	public static void main(String[] args) {
+		ApplicationContext context = (ApplicationContext) SpringApplication.run(SpringBootDataJpa02Application.class,
+				args);
+
+		UserRepository userRepository = context.getBean(UserRepository.class);
+
+		User user = new User();
+
+		user.setName("Abc");
+		user.setCity("XYA");
+		user.setStatus("Y");
+
+		User user1 = new User();
+
+		user1.setName("fafa");
+		user1.setCity("fag");
+		user1.setStatus("Y");
+
+		List<User> userResult = new ArrayList<>();
+
+		
+		/*
+		 * userResult.add(user1); userResult.add(user);
+		 * 
+		 * Iterable<User> result = userRepository.saveAll(userResult);
+		 * 
+		 * 
+		 * result.forEach(user4 -> { System.out.println("User Saved "+user4); });
+		 */
+		
+		
+		
+		//update
+		Optional<User> opt=userRepository.findById(5);
+
+		if(opt.isPresent()){
+			
+			User user0=opt.get();
+			user0.setName("Vidya");
+			userRepository.save(user0);
+			
+			
+		}
+		
+		//System.out.println("Printing All Result " + result);
+
+		/*
+		 * user.setName("Vidyadhar Jagadale"); user.setCity("Amalner");
+		 * user.setStatus("I am Java Programmer");
+		 * 
+		 * User user1 = userRepository.save(user); System.out.println(user1);
+		 */
+	}
+
+}

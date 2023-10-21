@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Spring_Guru_01_REST-API-1&apos; to &apos;Spring_boot-Hibernate&apos;" description="Rename resource &apos;Spring_Guru_01_REST-API-1&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Spring_Guru_01_REST-API-1" name="Spring_boot-Hibernate" stamp="1696081658728" updateReferences="true"/>&#x0A;<refactoring comment="Delete 2 resources" deleteContents="true" description="Delete 2 resources" element1="/Spring_boot-Hibernate" element2="/Spring_Guru_01_REST-API" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1696089723317"/>
+</session>
